@@ -1,8 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GitHub User Repository Explorer
+
+A Next.js application that allows users to explore GitHub user profiles and their repositories. Built with modern web technologies and a clean, responsive design.
+
+## Features
+
+- Search for GitHub users
+- View user profile information
+- Browse user repositories
+- Responsive design for all devices
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org) - React framework
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+- [Tailwind CSS](https://tailwindcss.com) - Styling
+- [Redux Toolkit](https://redux-toolkit.js.org/) - State management
+- [GitHub REST API](https://docs.github.com/en/rest) - Data fetching
+- [Husky](https://typicode.github.io/husky/) - Git hooks for code quality
+
+## Development Tools
+
+- [Atom](https://atom.io/) - Recommended code editor
+- [ESLint](https://eslint.org/) - Code linting
+- [Prettier](https://prettier.io/) - Code formatting
+- [Husky](https://typicode.github.io/husky/) - Git hooks for pre-commit checks
+
+## Project Structure
+
+The project follows a feature-based architecture:
+
+```
+src/
+├── features/           # Feature-based modules
+│   ├── auth/          # Authentication feature
+│   ├── user/          # User profile feature
+│   └── repository/    # Repository feature
+├── shared/            # Shared components and utilities
+│   ├── components/    # Reusable UI components
+│   ├── hooks/         # Custom React hooks
+│   ├── store/         # Redux store configuration
+│   └── utils/         # Utility functions
+├── app/               # Next.js app directory
+└── public/            # Static assets
+```
+
+Each feature module contains:
+
+- Components
+- Redux slice
+- API services
+- Types
+- Utils
 
 ## Getting Started
 
-First, run the development server:
+First, clone the repository and install dependencies:
+
+```bash
+git clone <your-repo-url>
+cd github-user-repo
+npm install
+```
+
+Set up Husky for pre-commit hooks:
+
+```bash
+npm run prepare
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -14,23 +80,45 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Development Guidelines
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### State Management
+
+- Use Redux Toolkit for global state management
+- Follow the feature-based architecture for organizing Redux slices
+- Keep components as pure as possible, moving business logic to Redux
+
+### Code Quality
+
+- Husky pre-commit hooks ensure:
+  - Code formatting with Prettier
+  - Linting with ESLint
+  - Type checking with TypeScript
+  - Test coverage requirements
+
+### Feature Development
+
+- Create new features in the `features/` directory
+- Follow the established module structure
+- Keep features modular and self-contained
+- Share common code through the `shared/` directory
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about the technologies used in this project:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Redux Toolkit Documentation](https://redux-toolkit.js.org/)
+- [GitHub REST API Documentation](https://docs.github.com/en/rest)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Husky Documentation](https://typicode.github.io/husky/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is open source and available under the [MIT License](LICENSE).
