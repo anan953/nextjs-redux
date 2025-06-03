@@ -1,6 +1,6 @@
 import { useState, KeyboardEvent } from 'react';
-import { Input } from '@/components/atoms/Input/Input';
-import { Button } from '@/components/atoms/Button/Button';
+import { Input } from '@/shared/components/atoms/Input/Input';
+import { Button } from '@/shared/components/atoms/Button/Button';
 
 interface SearchBarProps {
   onSearch: (value: string) => void;

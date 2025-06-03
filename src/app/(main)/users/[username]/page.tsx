@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { RepositoryCard } from '@/features/repositories/components/organisms/RepositoryCard/RepositoryCard';
 import { RepositorySkeleton } from '@/features/repositories/components/organisms/RepositoryCard/RepositorySkeleton';
-import { ErrorAlert } from '@/components/molecules/ErrorAlert/ErrorAlert';
+import { ErrorAlert } from '@/shared/components/molecules/ErrorAlert/ErrorAlert';
 import { useRepositories } from '@/features/repositories/hooks/useRepositories';
 
 export default function UserRepositories() {

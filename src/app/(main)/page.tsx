@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { SearchBar } from '@/features/user-detail/components/molecules/SearchBar/SearchBar';
 import { UserCard } from '@/features/user-detail/components/organisms/UserCard/UserCard';
-import { ErrorAlert } from '@/components/molecules/ErrorAlert/ErrorAlert';
+import { ErrorAlert } from '@/shared/components/molecules/ErrorAlert/ErrorAlert';
 import { UserCardSkeleton } from '@/features/user-detail/components/organisms/UserCard/UserCardSkeleton';
 import { useGithubSearch } from '@/features/user-detail/hooks/useGithubSearch';
 
