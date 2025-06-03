@@ -1,21 +1,21 @@
-import type { AxiosError, InternalAxiosRequestConfig } from "axios";
-import type { GitHubError } from "./type";
-import { APIClient, type APIConfig } from "../base/api";
+import type { AxiosError, InternalAxiosRequestConfig } from 'axios';
+import type { GitHubError } from './type';
+import { APIClient, type APIConfig } from '../base/api';
 import {
   userSchema,
   repositoriesSchema,
   type ValidatedUser,
   type ValidatedRepositories,
-} from "./validation";
+} from './validation';
 
-const GITHUB_API_BASE_URL = "https://api.github.com";
+const GITHUB_API_BASE_URL = 'https://api.github.com';
 
 class GitHubApiClient extends APIClient {
   constructor() {
     const config: APIConfig = {
       baseURL: GITHUB_API_BASE_URL,
       headers: {
-        Accept: "application/vnd.github.v3+json",
+        Accept: 'application/vnd.github.v3+json',
       },
     };
     super(config);
@@ -24,9 +24,7 @@ class GitHubApiClient extends APIClient {
     this.getUserRepos = this.getUserRepos.bind(this);
   }
 
-  protected setupAuthInterceptor(
-    config: InternalAxiosRequestConfig
-  ): InternalAxiosRequestConfig {
+  protected setupAuthInterceptor(config: InternalAxiosRequestConfig): InternalAxiosRequestConfig {
     const token = process.env.GITHUB_TOKEN;
     if (token && config.headers) {
       config.headers.Authorization = `token ${token}`;
@@ -37,9 +35,9 @@ class GitHubApiClient extends APIClient {
   protected handleError(error: AxiosError): Error {
     if (error.response?.data) {
       const githubError = error.response.data as GitHubError;
-      return new Error(githubError.message || "GitHub API request failed");
+      return new Error(githubError.message || 'GitHub API request failed');
     }
-    return new Error(error.message || "An unknown error occurred");
+    return new Error(error.message || 'An unknown error occurred');
   }
 
   async getUser(username: string): Promise<ValidatedUser> {

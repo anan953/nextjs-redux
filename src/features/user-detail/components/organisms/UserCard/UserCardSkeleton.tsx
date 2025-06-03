@@ -4,9 +4,7 @@ interface UserCardSkeletonProps {
 
 export const UserCardSkeleton = ({ className }: UserCardSkeletonProps) => {
   return (
-    <div
-      className={`rounded-lg border border-gray-200 bg-white p-6 shadow-sm ${className}`}
-    >
+    <div className={`rounded-lg border border-gray-200 bg-white p-6 shadow-sm ${className}`}>
       <div className="flex items-center gap-4">
         <div className="h-16 w-16 animate-pulse rounded-full bg-gray-200" />
         <div className="flex-1 space-y-2">

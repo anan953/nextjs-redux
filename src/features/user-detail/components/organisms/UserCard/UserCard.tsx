@@ -1,5 +1,5 @@
-import Image from "next/image";
-import { GitHubUser } from "@/features/user-detail/types";
+import Image from 'next/image';
+import { GitHubUser } from '@/features/user-detail/types';
 
 interface UserCardProps {
   user: GitHubUser;
@@ -11,7 +11,7 @@ export const UserCard = ({ user, onClick, className }: UserCardProps) => {
   return (
     <div
       className={`rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md ${
-        onClick ? "cursor-pointer" : ""
+        onClick ? 'cursor-pointer' : ''
       } ${className}`}
       onClick={onClick}
     >
@@ -30,18 +30,11 @@ export const UserCard = ({ user, onClick, className }: UserCardProps) => {
         </div>
       </div>
 
-      {user.bio && (
-        <p className="mt-4 text-sm text-gray-600 line-clamp-2">{user.bio}</p>
-      )}
+      {user.bio && <p className="mt-4 text-sm text-gray-600 line-clamp-2">{user.bio}</p>}
 
       <div className="mt-4 flex gap-4 text-sm text-gray-500">
         <div className="flex items-center gap-1">
-          <svg
-            className="h-4 w-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
+          <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -52,12 +45,7 @@ export const UserCard = ({ user, onClick, className }: UserCardProps) => {
           <span>{user.followers} followers</span>
         </div>
         <div className="flex items-center gap-1">
-          <svg
-            className="h-4 w-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
+          <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               strokeLinecap="round"
               strokeLinejoin="round"

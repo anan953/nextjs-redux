@@ -1,13 +1,11 @@
-import { useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { searchUserRequest } from "@/features/user-detail/store/githubUserSlice";
-import { RootState } from "@/store";
+import { useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { searchUserRequest } from '@/features/user-detail/store/githubUserSlice';
+import { RootState } from '@/store';
 
 export const useGithubSearch = () => {
   const dispatch = useDispatch();
-  const { user, loading, error } = useSelector(
-    (state: RootState) => state.githubUser
-  );
+  const { user, loading, error } = useSelector((state: RootState) => state.githubUser);
 
   const searchUser = useCallback(
     (username: string) => {

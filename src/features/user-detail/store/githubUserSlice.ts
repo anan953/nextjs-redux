@@ -1,5 +1,5 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { GitHubUser } from "@/features/user-detail/types";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { GitHubUser } from '@/features/user-detail/types';
 
 interface GitHubUserState {
   user: GitHubUser | null;
@@ -14,7 +14,7 @@ const initialState: GitHubUserState = {
 };
 
 const githubUserSlice = createSlice({
-  name: "githubUser",
+  name: 'githubUser',
   initialState,
   reducers: {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -35,7 +35,6 @@ const githubUserSlice = createSlice({
   },
 });
 
-export const { searchUserRequest, searchUserSuccess, searchUserFailure } =
-  githubUserSlice.actions;
+export const { searchUserRequest, searchUserSuccess, searchUserFailure } = githubUserSlice.actions;
 
 export default githubUserSlice.reducer;

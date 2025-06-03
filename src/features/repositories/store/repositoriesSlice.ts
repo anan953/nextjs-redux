@@ -1,5 +1,5 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Repository } from "@/features/repositories/types";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { Repository } from '@/features/repositories/types';
 
 interface RepositoriesState {
   repositories: Repository[];
@@ -14,7 +14,7 @@ const initialState: RepositoriesState = {
 };
 
 const repositoriesSlice = createSlice({
-  name: "repositories",
+  name: 'repositories',
   initialState,
   reducers: {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -35,10 +35,7 @@ const repositoriesSlice = createSlice({
   },
 });
 
-export const {
-  fetchRepositoriesRequest,
-  fetchRepositoriesSuccess,
-  fetchRepositoriesFailure,
-} = repositoriesSlice.actions;
+export const { fetchRepositoriesRequest, fetchRepositoriesSuccess, fetchRepositoriesFailure } =
+  repositoriesSlice.actions;
 
 export default repositoriesSlice.reducer;

@@ -1,11 +1,8 @@
-import axios, { AxiosError } from "axios";
-import type { AxiosInstance, InternalAxiosRequestConfig } from "axios";
-import { CacheManager } from "./cache";
+import axios, { AxiosError } from 'axios';
+import type { AxiosInstance, InternalAxiosRequestConfig } from 'axios';
+import { CacheManager } from './cache';
 
-export type RequestParams = Record<
-  string,
-  string | number | boolean | undefined
->;
+export type RequestParams = Record<string, string | number | boolean | undefined>;
 
 export interface APIConfig {
   baseURL: string;
@@ -27,7 +24,7 @@ export abstract class APIClient {
       baseURL: config.baseURL,
       timeout: config.timeout || 10000,
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
         ...config.headers,
       },
     });
@@ -47,11 +44,9 @@ export abstract class APIClient {
 
   protected setupInterceptors(): void {
     // Add auth token if available
-    this.client.interceptors.request.use(
-      (config: InternalAxiosRequestConfig) => {
-        return this.setupAuthInterceptor(config);
-      }
-    );
+    this.client.interceptors.request.use((config: InternalAxiosRequestConfig) => {
+      return this.setupAuthInterceptor(config);
+    });
 
     // Handle rate limiting and retries
     this.client.interceptors.response.use(
@@ -67,9 +62,7 @@ export abstract class APIClient {
         let retryCount = 0;
         while (retryCount < this.maxRetries) {
           try {
-            await new Promise((resolve) =>
-              setTimeout(resolve, this.retryDelay * (retryCount + 1))
-            );
+            await new Promise((resolve) => setTimeout(resolve, this.retryDelay * (retryCount + 1)));
             return await this.client(originalRequest);
           } catch (retryError) {
             retryCount++;
@@ -96,7 +89,7 @@ export abstract class APIClient {
   protected abstract handleError(error: AxiosError): Error;
 
   protected getCacheKey(url: string, params?: RequestParams): string {
-    return `${url}${params ? JSON.stringify(params) : ""}`;
+    return `${url}${params ? JSON.stringify(params) : ''}`;
   }
 
   protected getFromCache<T>(key: string): T | null {

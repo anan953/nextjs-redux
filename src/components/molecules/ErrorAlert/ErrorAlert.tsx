@@ -7,10 +7,7 @@ export const ErrorAlert = ({ error, className }: ErrorAlertProps) => {
   if (!error) return null;
 
   return (
-    <div
-      className={`rounded-md bg-red-50 p-4 text-sm text-red-700 ${className}`}
-      role="alert"
-    >
+    <div className={`rounded-md bg-red-50 p-4 text-sm text-red-700 ${className}`} role="alert">
       <div className="flex items-center">
         <svg
           className="mr-2 h-4 w-4 text-red-500"

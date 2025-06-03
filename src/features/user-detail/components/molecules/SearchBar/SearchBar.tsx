@@ -1,6 +1,6 @@
-import { useState, KeyboardEvent } from "react";
-import { Input } from "@/components/atoms/Input/Input";
-import { Button } from "@/components/atoms/Button/Button";
+import { useState, KeyboardEvent } from 'react';
+import { Input } from '@/components/atoms/Input/Input';
+import { Button } from '@/components/atoms/Button/Button';
 
 interface SearchBarProps {
   onSearch: (value: string) => void;
@@ -12,10 +12,10 @@ interface SearchBarProps {
 export const SearchBar = ({
   onSearch,
   loading = false,
-  placeholder = "Search GitHub username...",
+  placeholder = 'Search GitHub username...',
   className,
 }: SearchBarProps) => {
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState('');
 
   const handleSearch = () => {
     if (searchValue.trim()) {
@@ -24,7 +24,7 @@ export const SearchBar = ({
   };
 
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
+    if (e.key === 'Enter') {
       handleSearch();
     }
   };
@@ -39,11 +39,7 @@ export const SearchBar = ({
         disabled={loading}
         className="flex-1"
       />
-      <Button
-        onClick={handleSearch}
-        isLoading={loading}
-        disabled={!searchValue.trim() || loading}
-      >
+      <Button onClick={handleSearch} isLoading={loading} disabled={!searchValue.trim() || loading}>
         Search
       </Button>
     </div>

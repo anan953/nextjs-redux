@@ -4,9 +4,7 @@ interface RepositorySkeletonProps {
 
 export const RepositorySkeleton = ({ className }: RepositorySkeletonProps) => {
   return (
-    <div
-      className={`rounded-lg border border-gray-700 bg-[#2d2d2d] p-6 ${className}`}
-    >
+    <div className={`rounded-lg border border-gray-700 bg-[#2d2d2d] p-6 ${className}`}>
       <div className="flex items-start justify-between">
         <div className="flex-1">
           <div className="h-6 w-32 animate-pulse rounded bg-gray-700" />

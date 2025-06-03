@@ -1,6 +1,6 @@
-import { combineReducers } from "@reduxjs/toolkit";
-import githubUserReducer from "@/features/user-detail/store/githubUserSlice";
-import repositoriesReducer from "@/features/repositories/store/repositoriesSlice";
+import { combineReducers } from '@reduxjs/toolkit';
+import githubUserReducer from '@/features/user-detail/store/githubUserSlice';
+import repositoriesReducer from '@/features/repositories/store/repositoriesSlice';
 
 const rootReducer = combineReducers({
   githubUser: githubUserReducer,

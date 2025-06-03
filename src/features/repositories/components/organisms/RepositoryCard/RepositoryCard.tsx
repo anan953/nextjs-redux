@@ -1,15 +1,12 @@
-import Link from "next/link";
-import { Repository } from "@/features/repositories/types";
+import Link from 'next/link';
+import { Repository } from '@/features/repositories/types';
 
 interface RepositoryCardProps {
   repository: Repository;
   className?: string;
 }
 
-export const RepositoryCard = ({
-  repository,
-  className,
-}: RepositoryCardProps) => {
+export const RepositoryCard = ({ repository, className }: RepositoryCardProps) => {
   return (
     <Link
       href={repository.html_url}
@@ -19,13 +16,9 @@ export const RepositoryCard = ({
     >
       <div className="flex items-start justify-between">
         <div className="flex-1">
-          <h3 className="text-lg font-semibold text-blue-400">
-            {repository.name}
-          </h3>
+          <h3 className="text-lg font-semibold text-blue-400">{repository.name}</h3>
           {repository.description && (
-            <p className="mt-2 text-sm text-gray-400 line-clamp-2">
-              {repository.description}
-            </p>
+            <p className="mt-2 text-sm text-gray-400 line-clamp-2">{repository.description}</p>
           )}
         </div>
         {repository.language && (
@@ -37,12 +30,7 @@ export const RepositoryCard = ({
 
       <div className="mt-4 flex flex-wrap gap-4 text-sm text-gray-400">
         <div className="flex items-center gap-1">
-          <svg
-            className="h-4 w-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
+          <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -53,12 +41,7 @@ export const RepositoryCard = ({
           <span>{repository.stargazers_count}</span>
         </div>
         <div className="flex items-center gap-1">
-          <svg
-            className="h-4 w-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
+          <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
