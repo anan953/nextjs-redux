@@ -6,6 +6,7 @@ import { UserCard } from '@/features/user-detail/components/organisms/UserCard/U
 import { ErrorAlert } from '@/shared/components/molecules/ErrorAlert/ErrorAlert';
 import { UserCardSkeleton } from '@/features/user-detail/components/organisms/UserCard/UserCardSkeleton';
 import { useGithubSearch } from '@/features/user-detail/hooks/useGithubSearch';
+import { Header } from '@/shared/components/molecules/header/Header';
 
 export default function Home() {
   const router = useRouter();
@@ -19,6 +20,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen p-8">
+      <Header />
       <main className="max-w-2xl mx-auto">
         <h1 className="text-3xl font-bold text-center mb-8">GitHub User Search</h1>
 
